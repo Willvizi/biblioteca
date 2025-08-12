@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.20.xsd">
+
+    <changeSet id="11082025-create-table-user" author="willian">
+        <createTable tableName="usuario">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="nome" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="email" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="data_cadastro" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="telefone" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="usuario"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="11082025-create-table-livro" author="willian">
+        <createTable tableName="livro">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="titulo" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="autor" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="isbn" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="data_publicacao" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="categoria" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="livro"/>
+        </rollback>
+    </changeSet>
+
+    <changeSet id="11082025-create-table-emprestimo" author="willian">
+        <createTable tableName="emprestimo">
+            <column name="id" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="usuario_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="livro_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="data_emprestimo" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="data_devolucao" type="DATE">
+                <constraints nullable="false"/>
+            </column>
+            <column name="status" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint baseTableName="emprestimo"
+                                 baseColumnNames="usuario_id"
+                                 constraintName="fk_emprestimo_usuario"
+                                 referencedTableName="usuario"
+                                 referencedColumnNames="id"/>
+
+        <addForeignKeyConstraint baseTableName="emprestimo"
+                                 baseColumnNames="livro_id"
+                                 constraintName="fk_emprestimo_livro"
+                                 referencedTableName="livro"
+                                 referencedColumnNames="id"/>
+        <rollback>
+            <dropForeignKeyConstraint baseTableName="emprestimo" constraintName="fk_emprestimo_usuario"/>
+            <dropForeignKeyConstraint baseTableName="emprestimo" constraintName="fk_emprestimo_livro"/>
+            <dropTable tableName="emprestimo"/>
+        </rollback>
+    </changeSet>
+
+</databaseChangeLog>
