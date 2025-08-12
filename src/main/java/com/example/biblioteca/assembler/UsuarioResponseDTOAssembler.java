@@ -5,11 +5,13 @@ import com.example.biblioteca.dto.UsuarioResponseDTO;
 import org.springframework.stereotype.Component;
 
 import java.time.format.DateTimeFormatter;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Component
 public class UsuarioResponseDTOAssembler {
 
-public UsuarioResponseDTO toDTO(UsuarioDTO usuarioDTO){
+    public UsuarioResponseDTO toDTO(UsuarioDTO usuarioDTO) {
         return UsuarioResponseDTO.builder()
                 .id(usuarioDTO.getId())
                 .nome(usuarioDTO.getNome())
@@ -18,5 +20,11 @@ public UsuarioResponseDTO toDTO(UsuarioDTO usuarioDTO){
                 .dataCadastro(usuarioDTO.getDataCadastro().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")))
                 .build();
     }
+    public List<UsuarioResponseDTO> toCollectionDTO(List<UsuarioDTO> usuariosDTO) {
+        return usuariosDTO.stream()
+                .map(this::toDTO)
+                .collect(Collectors.toList());
+    }
+
 
 }

@@ -5,6 +5,8 @@ import com.example.biblioteca.dto.UsuarioDTO;
 import com.example.biblioteca.input.UsuarioInput;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class UsuarioDTOAssembler {
     public UsuarioDTO inputToDTO(UsuarioInput usuarioInput) {
@@ -23,5 +25,11 @@ public class UsuarioDTOAssembler {
                 .telefone(usuario.getTelefone())
                 .dataCadastro(usuario.getDataCadastro())
                 .build();
+    }
+
+    public List<UsuarioDTO> entityListToDTO(List<Usuario> usuarios) {
+        return usuarios.stream()
+                .map(this::entityToDTO)
+                .toList();
     }
 }
