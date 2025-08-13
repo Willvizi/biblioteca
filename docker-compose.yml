@@ -1,17 +1,27 @@
-version: "3.8"
-
 services:
   db:
     image: postgres:17
     container_name: biblioteca_db
     environment:
       POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: 7KTu)$U9W1%7
+      POSTGRES_PASSWORD: 7KTu)%7
       POSTGRES_DB: postgres
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+
+  app:
+    container_name: biblioteca_app
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/postgres
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 7KTu)%7
 
   pgadmin:
     image: dpage/pgadmin4
