@@ -1,0 +1,623 @@
+{
+	"info": {
+		"_postman_id": "b4a48d72-4e69-40f2-ba50-7cd9f369500d",
+		"name": "Collection biblioteca",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28427095"
+	},
+	"item": [
+		{
+			"name": "Usuario",
+			"item": [
+				{
+					"name": "CriaUsuario",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "<API Key>",
+								"description": "Added as a part of security scheme: apikey",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"João Silva\",\r\n  \"email\": \"joao.silva@email.com.br\",\r\n  \"telefone\": \"(11) 99999-9999\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AtualizaUsuario",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "<API Key>",
+								"description": "Added as a part of security scheme: apikey",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"João Silva\",\r\n  \"email\": \"joao.silva@email.com.br\",\r\n  \"telefone\": \"(11) 99999-9999\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/usuario/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuario",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscaUsuarios",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "<API Key>",
+								"description": "Added as a part of security scheme: apikey",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"João Silva\",\r\n  \"email\": \"joao.silva@email.com.br\",\r\n  \"telefone\": \"(11) 99999-9999\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscaUsuario",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "<API Key>",
+								"description": "Added as a part of security scheme: apikey",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"João Silva\",\r\n  \"email\": \"joao.silva@email.com.br\",\r\n  \"telefone\": \"(11) 99999-9999\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/usuario",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuario"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeletaUsuario",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "X-Auth-Token",
+								"value": "<API Key>",
+								"description": "Added as a part of security scheme: apikey",
+								"disabled": true
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"João Silva\",\r\n  \"email\": \"joao.silva@email.com.br\",\r\n  \"telefone\": \"(11) 99999-9999\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/usuario/7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"usuario",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Livros",
+			"item": [
+				{
+					"name": "CriaLivro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"titulo\": \"Aventuras no Mundo da Programação\",\r\n  \"autor\": \"João da Silva\",\r\n  \"isbn\": \"978-85-333-0227-9\",\r\n  \"dataPublicacao\": \"2024-05-15\",\r\n  \"categoria\": \"Tecnologia e Programação\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/livro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"livro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AtualizaLivroById",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"titulo\": \"Aventuras no Mundo da Programação\",\r\n  \"autor\": \"João da Silva\",\r\n  \"isbn\": \"978-85-333-0227-9\",\r\n  \"dataPublicacao\": \"2024-05-15\",\r\n  \"categoria\": \"Tecnologia e Programação\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/livro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"livro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeletaLivro",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"titulo\": \"Aventuras no Mundo da Programação\",\r\n  \"autor\": \"João da Silva\",\r\n  \"isbn\": \"978-85-333-0227-9\",\r\n  \"dataPublicacao\": \"2024-05-15\",\r\n  \"categoria\": \"Tecnologia e Programação\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/livro/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"livro",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscaLivroPorId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"titulo\": \"Aventuras no Mundo da Programação\",\r\n  \"autor\": \"João da Silva\",\r\n  \"isbn\": \"978-85-333-0227-9\",\r\n  \"dataPublicacao\": \"2024-05-15\",\r\n  \"categoria\": \"Tecnologia e Programação\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/livro/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"livro",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscaTodosOsLivros",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"titulo\": \"Aventuras no Mundo da Programação\",\r\n  \"autor\": \"João da Silva\",\r\n  \"isbn\": \"978-85-333-0227-9\",\r\n  \"dataPublicacao\": \"2024-05-15\",\r\n  \"categoria\": \"Tecnologia e Programação\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/livro/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"livro",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Emprestimo",
+			"item": [
+				{
+					"name": "DevolverEmprestimo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/emprestimo/1/devolucao",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"emprestimo",
+								"1",
+								"devolucao"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AumentarDataDevolucao",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"dataDevolucao\": \"2024-05-15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/emprestimo/3/ajustarData",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"emprestimo",
+								"3",
+								"ajustarData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CriaEmprestimo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"titulo\": \"Aventuras no Mundo da Programação\",\r\n  \"autor\": \"João da Silva\",\r\n  \"isbn\": \"978-85-333-0227-9\",\r\n  \"dataPublicacao\": \"2024-05-15\",\r\n  \"categoria\": \"Tecnologia e Programação\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/livro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"livro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscaEmprestimoPorId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"titulo\": \"Aventuras no Mundo da Programação\",\r\n  \"autor\": \"João da Silva\",\r\n  \"isbn\": \"978-85-333-0227-9\",\r\n  \"dataPublicacao\": \"2024-05-15\",\r\n  \"categoria\": \"Tecnologia e Programação\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/emprestimo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"emprestimo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscaTodosEmprestimos",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"titulo\": \"Aventuras no Mundo da Programação\",\r\n  \"autor\": \"João da Silva\",\r\n  \"isbn\": \"978-85-333-0227-9\",\r\n  \"dataPublicacao\": \"2024-05-15\",\r\n  \"categoria\": \"Tecnologia e Programação\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/emprestimos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"emprestimos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscaTodosEmprestimosDoUsuario",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"titulo\": \"Aventuras no Mundo da Programação\",\r\n  \"autor\": \"João da Silva\",\r\n  \"isbn\": \"978-85-333-0227-9\",\r\n  \"dataPublicacao\": \"2024-05-15\",\r\n  \"categoria\": \"Tecnologia e Programação\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/livro/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"livro",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RecomendacaoService",
+			"item": [
+				{
+					"name": "Recomendacoes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/livros/recomendacoes/usuario/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"livros",
+								"recomendacoes",
+								"usuario",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
