@@ -32,7 +32,15 @@ public class Emprestimo {
     @Column(name = "data_devolucao", nullable = false)
     private LocalDate dataDevolucao;
 
-    @Column(nullable = false, length = 50)
-    private String status;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private StatusEmprestimo status;
+
+    public enum StatusEmprestimo {
+        ATIVO,
+        DEVOLVIDO,
+        ATRASADO
+    }
+
 
 }
