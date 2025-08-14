@@ -38,7 +38,7 @@ Após a inicialização, os seguintes serviços estarão disponíveis:
     - **E-mail:** `admin@admin.com`
     - **Senha:** `admin`
       
-- **O frontend estará disponível em: [http://localhost:5173](http://localhost:5173)
+- **O frontend estará disponível em:** [http://localhost:5173](http://localhost:5173)
 
 ### 3. Parar os Contêineres
 
