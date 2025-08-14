@@ -1,3 +1,4 @@
+
 FROM openjdk:24-jdk-bookworm AS build
 WORKDIR /app
 
