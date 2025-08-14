@@ -80,6 +80,6 @@ Isso automatiza o processo de migração do banco de dados, eliminando a necessi
 
 ### Problemas Comuns
 
-- **Porta já em uso:** Verifique se as portas 8080, 3000 e 5432 não estão sendo usadas por outros processos
+- **Porta já em uso:** Verifique se as portas 8080, 5173 e 5432 não estão sendo usadas por outros processos
 - **Erro de conexão com banco:** Verifique se o PostgreSQL está rodando e as credenciais estão corretas
 - **Dependências do npm:** Execute `npm install` novamente se houver problemas com as dependências do frontend
