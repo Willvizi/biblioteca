@@ -20,7 +20,7 @@ Após inicializar o sistema, você pode acessar os seguintes serviços:
 
 - [Docker](https://docs.docker.com/get-docker/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
-
+![img.png](img.png)
 ### 1. Iniciar os Contêineres
 
 Abra um terminal na raiz do projeto e execute o seguinte comando para construir a imagem da aplicação e iniciar todos os serviços em segundo plano:
@@ -81,6 +81,52 @@ Isso automatiza o processo de migração do banco de dados, eliminando a necessi
 
 ### Problemas Comuns
 
-- **Porta já em uso:** Verifique se as portas 8080, 5173 e 5432 não estão sendo usadas por outros processos
+- **Porta já em uso:** Verifique se as portas 8080, 5173 e 5050 não estão sendo usadas por outros processos
 - **Erro de conexão com banco:** Verifique se o PostgreSQL está rodando e as credenciais estão corretas
 - **Dependências do npm:** Execute `npm install` novamente se houver problemas com as dependências do frontend
+
+## Execução sem Docker
+Se você preferir executar o sistema sem Docker, siga estas instruções:
+### Pré-requisitos
+- [Java Development Kit (JDK) 21](https://www.oracle.com/java/technologies/downloads/)
+- [Maven](https://maven.apache.org/download.cgi)
+- [PostgreSQL](https://www.postgresql.org/download/)
+- [Node.js](https://nodejs.org/en/download/)
+- [npm](https://www.npmjs.com/get-npm) (incluído com o Node.js)
+
+### 1. Configurando o Banco de Dados
+1. Instale o PostgreSQL seguindo as instruções oficiais para seu sistema operacional
+2. Crie um banco de dados para a aplicação:
+``` sql
+   CREATE DATABASE biblioteca;
+```
+1. Não é necessario criar um usuário:
+### 2. Configurando e Executando o Backend
+1. Clone o repositório e navegue até a pasta raiz do projeto
+2. Configure as propriedades do banco de dados no arquivo `src/main/resources/application.properties`:
+``` properties
+   spring.datasource.url=jdbc:postgresql://localhost:5432/biblioteca
+   spring.datasource.username=biblioteca_user
+   spring.datasource.password=sua_senha
+```
+1. Compile e execute o backend:
+``` bash
+   mvn clean install
+   mvn spring-boot:run
+```
+1. O backend estará disponível em [http://localhost:8080](http://localhost:8080)
+
+### 3. Configurando e Executando o Frontend
+1. Navegue até a pasta `frontend`
+2. Com o node instalado e pnpm instalado, instale as dependências:
+``` bash
+   pnpm install
+```
+1. Inicie o servidor de desenvolvimento:
+``` bash
+   pnpm run dev
+```
+1. O frontend estará disponível em [http://localhost:5173](http://localhost:5173)
+
+### 4. Acessando a Documentação da API
+A documentação Swagger estará disponível em [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)

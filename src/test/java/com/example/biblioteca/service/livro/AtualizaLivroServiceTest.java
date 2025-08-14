@@ -4,26 +4,29 @@ import com.example.biblioteca.assembler.LivroAssembler;
 import com.example.biblioteca.domain.Livro;
 import com.example.biblioteca.dto.LivroDTO;
 import com.example.biblioteca.repository.LivroRepository;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+@ExtendWith(MockitoExtension.class)
 class AtualizaLivroServiceTest {
 
-    private AtualizaLivroService atualizaLivroService;
+    @Mock
     private BuscaLivroService buscaLivroService;
+
+    @Mock
     private LivroRepository livroRepository;
+
+    @Mock
     private LivroAssembler livroAssembler;
 
-    @BeforeEach
-    void setUp() {
-        buscaLivroService = mock(BuscaLivroService.class, "Willian Visicati");
-        livroRepository = mock(LivroRepository.class, "Willian Visicati");
-        livroAssembler = mock(LivroAssembler.class, "Willian Visicati");
-        atualizaLivroService = new AtualizaLivroService(livroRepository, buscaLivroService, livroAssembler);
-    }
+    @InjectMocks
+    private AtualizaLivroService atualizaLivroService;
 
     @Test
     void deveAtualizarLivroComSucesso() {

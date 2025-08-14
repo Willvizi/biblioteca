@@ -4,9 +4,9 @@ import com.example.biblioteca.domain.Emprestimo;
 import com.example.biblioteca.domain.Livro;
 import com.example.biblioteca.domain.Usuario;
 import com.example.biblioteca.repository.EmprestimoRepository;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -19,14 +19,10 @@ import static org.mockito.Mockito.when;
 class DeletaEmprestimoServiceTest {
 
     @Mock
-    private EmprestimoRepository emprestimoRepositoryWillianVisicati;
+    private EmprestimoRepository emprestimoRepository;
 
+    @InjectMocks
     private DeletaEmprestimoService deletaEmprestimoService;
-
-    @BeforeEach
-    void setUp() {
-        deletaEmprestimoService = new DeletaEmprestimoService(emprestimoRepositoryWillianVisicati);
-    }
 
     @Test
     void deveDeletarEmprestimosPorLivro() {
@@ -40,11 +36,11 @@ class DeletaEmprestimoServiceTest {
                 .build();
 
         List<Emprestimo> emprestimos = List.of(Emprestimo.builder().build());
-        when(emprestimoRepositoryWillianVisicati.findByLivro(livro)).thenReturn(emprestimos);
+        when(emprestimoRepository.findByLivro(livro)).thenReturn(emprestimos);
 
         deletaEmprestimoService.deletarPorLivro(livro);
 
-        verify(emprestimoRepositoryWillianVisicati).deleteAll(emprestimos);
+        verify(emprestimoRepository).deleteAll(emprestimos);
     }
 
     @Test
@@ -58,10 +54,10 @@ class DeletaEmprestimoServiceTest {
                 .build();
 
         List<Emprestimo> emprestimos = List.of(Emprestimo.builder().build());
-        when(emprestimoRepositoryWillianVisicati.findByUsuario(usuario)).thenReturn(emprestimos);
+        when(emprestimoRepository.findByUsuario(usuario)).thenReturn(emprestimos);
 
         deletaEmprestimoService.deletarPorUsuario(usuario);
 
-        verify(emprestimoRepositoryWillianVisicati).deleteAll(emprestimos);
+        verify(emprestimoRepository).deleteAll(emprestimos);
     }
 }
