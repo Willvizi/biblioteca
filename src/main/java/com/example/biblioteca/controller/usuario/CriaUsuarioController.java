@@ -5,6 +5,8 @@ import com.example.biblioteca.assembler.UsuarioResponseDTOAssembler;
 import com.example.biblioteca.dto.UsuarioResponseDTO;
 import com.example.biblioteca.input.UsuarioInput;
 import com.example.biblioteca.service.usuario.CriaUsuarioService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+@Tag(name = "Usuários")
 @RestController
 @RequestMapping("/usuario")
 @RequiredArgsConstructor
@@ -21,6 +24,7 @@ public class CriaUsuarioController {
     private final CriaUsuarioService criaUsuarioService;
     private final UsuarioResponseDTOAssembler usuarioResponseDTOAssembler;
 
+    @Operation(summary = "Cadastra um novo usuário")
     @PostMapping
     public ResponseEntity<UsuarioResponseDTO> criaUsuario(@RequestBody @Valid UsuarioInput usuarioInput) {
         return ResponseEntity.ok(usuarioResponseDTOAssembler
