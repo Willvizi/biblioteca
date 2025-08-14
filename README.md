@@ -101,7 +101,11 @@ Se você preferir executar o sistema sem Docker, siga estas instruções:
 ``` sql
    CREATE DATABASE biblioteca;
 ```
-1. Não é necessario criar um usuário:
+3. 1. Crie um usuário para acessar o banco (ou use um existente):
+``` sql
+   CREATE USER biblioteca_user WITH PASSWORD 'sua_senha';
+   GRANT ALL PRIVILEGES ON DATABASE biblioteca TO biblioteca_user;
+```
 ### 2. Configurando e Executando o Backend
 1. Clone o repositório e navegue até a pasta raiz do projeto
 2. Configure as propriedades do banco de dados no arquivo `src/main/resources/application.properties`:
