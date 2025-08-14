@@ -14,7 +14,7 @@ Este guia descreve como executar a aplicação e seus serviços utilizando Docke
 Abra um terminal na raiz do projeto e execute o seguinte comando para construir a imagem da aplicação e iniciar todos os serviços em segundo plano:
 
 ```bash
-docker-compose up --build -d
+docker-compose up
 ```
 
 ### 2. Acessar os Serviços
