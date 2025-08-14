@@ -37,7 +37,7 @@ Após a inicialização, os seguintes serviços estarão disponíveis:
 - **pgAdmin (Gerenciador do Banco):** [http://localhost:5050](http://localhost:5050)
     - **E-mail:** `admin@admin.com`
     - **Senha:** `admin`
-O frontend estará disponível em: [http://localhost:3000](http://localhost:3000)
+O frontend estará disponível em: [http://localhost:5173](http://localhost:5173)
 
 ### 3. Parar os Contêineres
 
