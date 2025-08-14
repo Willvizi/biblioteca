@@ -20,6 +20,7 @@ Após inicializar o sistema, você pode acessar os seguintes serviços:
 
 - [Docker](https://docs.docker.com/get-docker/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
+### Imagem dos containers após rodar:
 ![img.png](img.png)
 ### 1. Iniciar os Contêineres
 
